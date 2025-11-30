@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  tasks-service:
+    build: ./tasks-service
+    container_name: tasks-service
+    ports:
+      - "3001:3001"
+    environment:
+      - NOTIFY_URL=http://notify-service:3002/notify
+    depends_on:
+      - notify-service
+
+  notify-service:
+    build: ./notify-service
+    container_name: notify-service
+    ports:
+      - "3002:3002"
+
+
