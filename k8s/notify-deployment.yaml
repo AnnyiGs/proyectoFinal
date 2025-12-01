@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notify-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notify-service
+  template:
+    metadata:
+      labels:
+        app: notify-service
+    spec:
+      containers:
+        - name: notify-service
+          image: notify-service:latest
+          imagePullPolicy: IfNotPresent   # <-- Esta línea es la clave
+          ports:
+            - containerPort: 3002
+
+
