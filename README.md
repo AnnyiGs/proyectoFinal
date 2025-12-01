@@ -73,12 +73,12 @@ Cliente → [tasks-service] → [notify-service]
 ## 🛠️ Configuración y Despliegue
 
 ### Entorno local (sin Docker)
-# Tasks Service
+## Tasks Service
 cd tasks-service
 npm install
 node index.js
 
-# Notify Service
+## Notify Service
 cd notify-service
 npm install
 node index.js
